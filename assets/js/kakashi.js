@@ -16,9 +16,7 @@ var model = {
 			var kakashi = this.kakashis[i];
 			var index = kakashi.locations.indexOf(tebakan);
 
-			// check if a kakashi location has already been pukul
 			if ( kakashi.pukuli[index] === "pukul" ) {
-				// view.displayPesan("Oops, you already pukul that location");
 				view.displayPesan("Waduh, kamu udah cari ditempat itu");
 				return true;
 			} else if ( index >= 0 ) {
@@ -27,7 +25,6 @@ var model = {
 				view.displayPesan("pukul!");
 
 				if ( this.udahKetangkep(kakashi) ) {
-					// view.displayPesan("You sank my battlekakashi!");
 					view.displayPesan("Kamu menghancurkan bunshin kakashi!");
 					this.kakashiKetangkep++;
 				}
@@ -36,7 +33,6 @@ var model = {
 			// $('#tebakanInput').focus();
 		}
 		view.displaySalah(tebakan);
-		// view.displayPesan("You salahed");
 		view.displayPesan("Kamu salah");
 		return false;
 	},
@@ -128,12 +124,10 @@ var controller = {
 	}
 };
 
-// helper function to parse a tebakan from the user
 function parsetebakan(tebakan) {
 	var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
 
 	if (tebakan === null || tebakan.length !== 2) {
-		// alert("Oops, please enter a letter and a number on the board.");
 		alert("Masukan koordinat papannya!.");
 	} else {
 		var karakterPertama = tebakan.charAt(0);
@@ -142,7 +136,6 @@ function parsetebakan(tebakan) {
 		if (isNaN(row) || isNaN(column)) {
 			alert("Oops, that isn't on the board.");
 		} else if (row < 0 || row >= model.ukuranPapan || column < 0 || column >= model.ukuranPapan) {
-				// alert("Oops, that's off the board!");
 				alert("Tebakan diluar papan!");
 		} else {
 			return row + column;
@@ -170,7 +163,6 @@ function handleKeyPress(e) {
 	}
 }
 
-// init - called when the page has completed loading
 window.onload = init;
 
 function init() {
@@ -180,6 +172,5 @@ function init() {
 	// handle "return" key press
 	var tebakanInput = document.getElementById("tebakanInput");
 	tebakanInput.onkeypress = handleKeyPress;
-	// place the kakashis on the game board
 	model.generatekakashiLocations();
 }
