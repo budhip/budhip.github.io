@@ -1,0 +1,62 @@
+body {
+	background: black;
+}
+
+#papan {
+	position: relative;
+	width: 1024px;
+	height: 863px;
+	margin: auto;
+	background: url('images/papan.jpg') no-repeat;
+}
+
+#pesan {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: rgb(83, 175, 19);
+}
+
+form {
+	position: absolute;
+	top: 25px;
+	right: 0;
+	padding: 10px;
+	background-color: rgb(234, 166, 18);
+	z-index: 100;
+}
+
+form input {
+	background-color: rgb(152, 207, 113);
+	border-color: rgb(83, 175, 19);
+	font-size: 1em;
+}
+
+.form-control {
+	width: 70% !important;
+	margin-right: 5%;
+}
+
+table {
+	position: absolute;
+	left: 173px;
+	top: 98px;
+	border-spacing: 0;
+}
+
+tr {
+	height: 97px;
+}
+
+td {
+	width: 96px;
+	height: 94px;
+}
+
+.pukul {
+	background: url('images/kakashi.png') no-repeat center center;
+}
+
+.salah {
+	background: url('images/salah.png') no-repeat center center;
+}
